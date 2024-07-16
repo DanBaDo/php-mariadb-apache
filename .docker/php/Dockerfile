@@ -8,7 +8,7 @@ RUN a2enmod rewrite
 RUN chown -R www-data:www-data /var/www/
 
 # Install and enable xdebug.
-RUN pecl install xdebug && docker-php-ext-enable xdebug
+#RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 WORKDIR /var/www/html
 

@@ -12,8 +12,8 @@ services:
       MYSQL_DATABASE: tdi
       MYSQL_USER: tdi
       MYSQL_PASSWORD: tdi
-    ports:
-      - 7001:3306
+#    ports:
+#      - 7001:3306
 
   web:
     hostname: ma0-tdi-php-apache
@@ -24,7 +24,6 @@ services:
     container_name: ma0-tdi-php-apache
     networks:
       - backend
-      - frontend
     depends_on:
       - db
     volumes:
@@ -45,14 +44,12 @@ services:
       MYSQL_PASSWORD: tdi
     networks:
       - backend
-      - frontend
     links:
       - db:db
     depends_on:
       - db
     ports:
-      - 7002:80
+      - 7001:80
 
 networks:
   backend:
-  frontend:
