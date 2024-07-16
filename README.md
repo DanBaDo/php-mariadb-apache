@@ -1,34 +1,20 @@
-# PHP - MariaDB - Apache SEED
+# PHP - MariaDB - Apache
 
-This seed is for creating a lightweight web server with Apache, PHP and MySQL.
+PHP -> http://localhost:7000 -> ./php/index.php
 
-## Informations
+PHPMyAdmin -> http://localhost:7001
 
-| Name       | URL       | Port |
-| ---------- | --------- | ---- |
-| Database   | localhost | 7001 |
-| PHP        | localhost | 7000 |
-| PHPMyAdmin | localhost | 7002 |
+## Instalación
 
-
-## Commands
-
-### Start
-
-
-Just run this command
-
-```
-docker-compose up
-```
-
-### Stop
-
-Just press on *Ctrl+C*
-
-### Clean (only to delete project)
-
-```
-docker-compose rm
-docker rmi tdi_php_apache
-```
+* Instalamos Docker Desktop: https://docs.docker.com/desktop/install/windows-install/
+* Descargamos e descomprimimos o entorno: https://github.com/DanBaDo/php-mariadb-apache/archive/refs/heads/master.zip
+* Abrimos `docker-compose.yml`
+* Descargamos o backup da base de datos: https://trello.com/1/cards/668ef2b41e842051ea5b7d6b/attachments/6690052dd4a55b0caca036b7/download/sen-passwords-2022-10-2016-57-45_bbdd.zip
+* Accedemos a PHPMyAdmin: http://localhost:7001
+* Creamos unha nova base de datos:
+![Creamos unha nova base de datos](./doc/create_db.webp)
+* Importamos as taboas desde o backup:
+![Importando as táboas](./doc/import_tables.webp)
+* Analizamos o contido das táboas.
+* Modificamos o código en `./php/index.php` para tentar recuperar a información necesaria para reconstruir as novas.
+* Accedemos a http://localhost:7000 para ver o resultado.
